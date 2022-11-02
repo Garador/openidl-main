@@ -1,6 +1,5 @@
-const config = require('./config/config.json')
+const config = require('../config/config.json')
 const { Pool, Client } = require("pg");
-const records = require('../../../con-data/auto.json').records
 const credentials = {
   user: config.db.username,
   host: config.db.host,
@@ -60,4 +59,6 @@ let tearDownQuery = 'drop table openidl_ep.tmp_connector;'
 
 let masterQueryString = setUpQuery+auQuery+tearDownQuery
 
-let masterResult = main(masterQueryString)
+console.log({masterQueryString});
+
+//let masterResult = main(masterQueryString)
